@@ -14,6 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         showImage(currentIndex);
     }
 
-    // Cambio automático de imágenes cada 5 segundos
-    setInterval(nextImage, 5000);
+    // Cambio automático de imágenes cada 1 segundo
+    setInterval(nextImage, 1000);
 }); 
