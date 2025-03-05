@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Works - Lyda Martinez</title>
+        <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        <style>
+            .works-container {
+                position: relative;
+                padding-right: 25px;
+                min-height: 100vh;
+            }
+
+            .work-item {
+                cursor: pointer;
+                transition: opacity 0.3s ease;
+            }
+
+            .work-item:hover {
+                opacity: 0.9;
+            }
+
+            .work-item img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+            .page-title {
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+                color: #2733DF;
+                font-size: 5rem;
+                margin-bottom: 1rem;
+                margin-top: 1.5rem;
+            }
+
+            .work-item.neia {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: calc(50% - 25px);
+            }
+
+            .work-item.tarot {
+                position: absolute;
+                right: 25px;
+                top: 0;
+                width: calc(50% - 25px);
+            }
+
+            .work-item.cosechas {
+                position: absolute;
+                left: 0;
+                width: calc(50% - 25px);
+            }
+
+            .work-item.vinilos {
+                position: absolute;
+                right: 25px;
+                width: calc(50% - 25px);
+            }
+
+            @media (max-width: 768px) {
+                .works-container {
+                    padding: 0 15px;
+                    position: static;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                .work-item.neia,
+                .work-item.tarot,
+                .work-item.cosechas,
+                .work-item.vinilos {
+                    position: static;
+                    width: 100%;
+                    margin: 0;
+                }
+
+                .work-item.tarot {
+                    right: auto;
+                }
+
+                .work-item.vinilos {
+                    right: auto;
+                }
+
+                .page-title {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <!-- Sidebar/Menu -->
+        <aside class="sidebar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/gato-skater.webp" alt="Logo" class="logo-img">
+                </a>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="#" class="active">Works</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                <p>© Lyda Martinez</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="page-title">Works</h1>
+            <div class="works-container">
+                <a href="#neia" class="work-item neia">
+                    <img src="assets/works-neia.webp" alt="Neia Project">
+                </a>
+                <a href="#tarot" class="work-item tarot">
+                    <img src="assets/works-tarot.webp" alt="Tarot Project">
+                </a>
+                <a href="#cosechas" class="work-item cosechas">
+                    <img src="assets/works-cosechas.webp" alt="Cosechas Project">
+                </a>
+                <a href="#vinilos" class="work-item vinilos">
+                    <img src="assets/works-vinilos.webp" alt="Vinilos Project">
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function positionImages() {
+            if (window.innerWidth > 768) {
+                const neiaImg = document.querySelector('.work-item.neia img');
+                const tarotImg = document.querySelector('.work-item.tarot img');
+                const cosechas = document.querySelector('.work-item.cosechas');
+                const vinilos = document.querySelector('.work-item.vinilos');
+
+                if (neiaImg && cosechas) {
+                    const neiaRect = neiaImg.getBoundingClientRect();
+                    cosechas.style.top = (neiaRect.height + 15) + 'px';
+                }
+
+                if (tarotImg && vinilos) {
+                    const tarotRect = tarotImg.getBoundingClientRect();
+                    vinilos.style.top = (tarotRect.height + 15) + 'px';
+                }
+            }
+        }
+
+        // Wait for all images to load
+        Promise.all(
+            Array.from(document.images)
+                .map(img => {
+                    if (img.complete) return Promise.resolve();
+                    return new Promise(resolve => {
+                        img.onload = resolve;
+                        img.onerror = resolve;
+                    });
+                })
+        ).then(() => {
+            positionImages();
+        });
+
+        // Reposition on window resize
+        window.addEventListener('resize', positionImages);
+    </script>
+</body>
+</html> 
