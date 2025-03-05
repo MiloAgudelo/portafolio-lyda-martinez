@@ -1,0 +1,87 @@
+/* Works page specific styles */
+.works-container {
+    position: relative;
+    padding-right: 25px;
+    min-height: 100vh;
+}
+
+.work-item {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.work-item:hover {
+    opacity: 0.9;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.page-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: #2733DF;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.work-item.neia {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(50% - 25px);
+}
+
+.work-item.tarot {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: calc(50% - 25px);
+}
+
+.work-item.cosechas {
+    position: absolute;
+    left: 0;
+    width: calc(50% - 25px);
+}
+
+.work-item.vinilos {
+    position: absolute;
+    right: 25px;
+    width: calc(50% - 25px);
+}
+
+@media (max-width: 768px) {
+    .works-container {
+        padding: 0 15px;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .work-item.neia,
+    .work-item.tarot,
+    .work-item.cosechas,
+    .work-item.vinilos {
+        position: static;
+        width: 100%;
+        margin: 0;
+    }
+
+    .work-item.tarot {
+        right: auto;
+    }
+
+    .work-item.vinilos {
+        right: auto;
+    }
+
+    .page-title {
+        display: none;
+    }
+} 

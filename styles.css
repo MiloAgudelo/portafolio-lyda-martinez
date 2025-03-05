@@ -74,7 +74,8 @@ body {
     text-align: center;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a.active {
     opacity: 0.8;
 }
 
@@ -93,7 +94,7 @@ body {
     width: calc(100% - 205px);
 }
 
-/* Carousel */
+/* Carousel (Index page specific) */
 .carousel {
     position: relative;
     width: 100%;
