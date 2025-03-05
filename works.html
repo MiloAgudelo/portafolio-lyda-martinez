@@ -5,9 +5,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Works - Lyda Martinez</title>
         <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+        
+        <!-- Resource Hints -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <!-- Stylesheets -->
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="works.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        
+        <!-- Preload critical assets -->
+        <link rel="preload" as="image" href="assets/works-neia.webp">
+        <link rel="preload" as="image" href="assets/gato-skater.webp">
     </head>
 <body>
     <div class="container">
@@ -15,7 +25,7 @@
         <aside class="sidebar">
             <div class="logo">
                 <a href="index.html">
-                    <img src="assets/gato-skater.webp" alt="Logo" class="logo-img">
+                    <img src="assets/gato-skater.webp" alt="Logo" class="logo-img" width="97" height="97">
                 </a>
             </div>
             <nav class="menu">
@@ -34,16 +44,32 @@
             <h1 class="page-title">Works</h1>
             <div class="works-container">
                 <a href="#neia" class="work-item neia">
-                    <img src="assets/works-neia.webp" alt="Neia Project">
+                    <img src="assets/works-neia.webp" 
+                         alt="Neia Project"
+                         width="800"
+                         height="600"
+                         fetchpriority="high">
                 </a>
                 <a href="#tarot" class="work-item tarot">
-                    <img src="assets/works-tarot.webp" alt="Tarot Project">
+                    <img src="assets/works-tarot.webp" 
+                         alt="Tarot Project"
+                         width="800"
+                         height="600"
+                         loading="lazy">
                 </a>
                 <a href="#cosechas" class="work-item cosechas">
-                    <img src="assets/works-cosechas.webp" alt="Cosechas Project">
+                    <img src="assets/works-cosechas.webp" 
+                         alt="Cosechas Project"
+                         width="800"
+                         height="600"
+                         loading="lazy">
                 </a>
                 <a href="#vinilos" class="work-item vinilos">
-                    <img src="assets/works-vinilos.webp" alt="Vinilos Project">
+                    <img src="assets/works-vinilos.webp" 
+                         alt="Vinilos Project"
+                         width="800"
+                         height="600"
+                         loading="lazy">
                 </a>
             </div>
         </main>

@@ -5,16 +5,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Lyda Martinez - Portfolio</title>
         <link rel="icon" type="image/x-icon" href="/assets/favicon/favicon.ico">
+        
+        <!-- Resource Hints -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <!-- Stylesheets -->
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="index.css">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+        
+        <!-- Preload critical assets -->
+        <link rel="preload" as="image" href="assets/landing-carousel-1.webp">
+        <link rel="preload" as="image" href="assets/gato-skater.webp">
     </head>
 <body>
     <div class="container">
         <!-- Sidebar/Menu -->
         <aside class="sidebar">
             <div class="logo">
-                <img src="assets/gato-skater.webp" alt="Logo" class="logo-img">
+                <img src="assets/gato-skater.webp" alt="Logo" class="logo-img" width="97" height="97">
             </div>
             <nav class="menu">
                 <ul>
@@ -31,15 +41,35 @@
         <main class="main-content">
             <div class="carousel">
                 <div class="carousel-container">
-                    <img src="assets/landing-carousel-1.webp" alt="Carousel Image 1" class="carousel-img active">
-                    <img src="assets/landing-carousel-2.webp" alt="Carousel Image 2" class="carousel-img">
-                    <img src="assets/landing-carousel-3.webp" alt="Carousel Image 3" class="carousel-img">
-                    <img src="assets/landing-carousel-4.webp" alt="Carousel Image 4" class="carousel-img">
+                    <img src="assets/landing-carousel-1.webp" 
+                         alt="Carousel Image 1" 
+                         class="carousel-img active"
+                         width="1920"
+                         height="1080"
+                         fetchpriority="high">
+                    <img src="assets/landing-carousel-2.webp" 
+                         alt="Carousel Image 2" 
+                         class="carousel-img"
+                         width="1920"
+                         height="1080"
+                         loading="lazy">
+                    <img src="assets/landing-carousel-3.webp" 
+                         alt="Carousel Image 3" 
+                         class="carousel-img"
+                         width="1920"
+                         height="1080"
+                         loading="lazy">
+                    <img src="assets/landing-carousel-4.webp" 
+                         alt="Carousel Image 4" 
+                         class="carousel-img"
+                         width="1920"
+                         height="1080"
+                         loading="lazy">
                 </div>
             </div>
         </main>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html> 
