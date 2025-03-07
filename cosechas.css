@@ -195,8 +195,13 @@
         padding: 0 15px;
     }
 
+    .section-title {
+        text-align: center;
+    }
+
     .section-title h1 {
         font-size: 2rem;
+        padding-bottom: 1.5rem;
     }
 
     .section-content p {
@@ -224,8 +229,24 @@
         font-size: 1rem;
     }
 
-    .design-team p {
+    .design-team {
+        display: block;
+        text-align: center;
+    }
+
+    .design-team p:not(.team-header) {
+        display: none;
+    }
+
+    .design-team:after {
+        content: 'Lyda Martinez - Paula Hurtado - Manuela Calle';
+        display: block;
+        font-family: 'Inter', sans-serif;
         font-size: 0.8rem;
+        color: #000;
+        font-weight: 400;
+        margin-top: 3px;
+        text-align: center;
     }
 
     .gif-section {
