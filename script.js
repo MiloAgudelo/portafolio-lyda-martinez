@@ -1,19 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('.carousel-img');
-    let currentIndex = 0;
+    // Landing page carousel
+    function initLandingCarousel() {
+        const container = document.querySelector('.carousel-container');
+        if (!container) return;
 
-    // Función para mostrar la imagen actual
-    function showImage(index) {
-        images.forEach(img => img.classList.remove('active'));
-        images[index].classList.add('active');
+        const images = container.querySelectorAll('.carousel-img');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach(img => img.classList.remove('active'));
+            images[index].classList.add('active');
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 1000);
     }
 
-    // Función para la siguiente imagen
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
+    // Vinyl carousel
+    function initVinylCarousel() {
+        const container = document.querySelector('.vinilos .carousel-container');
+        if (!container) return;
+
+        const images = container.querySelectorAll('.carousel-img');
+        let currentIndex = 0;
+
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(showNextImage, 500);
     }
 
-    // Cambio automático de imágenes cada 1 segundo
-    setInterval(nextImage, 1000);
+    // Initialize both carousels
+    initLandingCarousel();
+    initVinylCarousel();
 }); 

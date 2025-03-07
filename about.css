@@ -247,3 +247,13 @@
         text-align: center;
     }
 }
+
+.about-content {
+    padding: 0 350px 0 30px;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        padding: 0;
+    }
+}

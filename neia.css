@@ -96,7 +96,7 @@
     display: flex;
     gap: 50px;
     margin-top: 4rem;
-    padding: 0 70px 0 30px;
+    padding: 0 220px 0 160px;
 }
 
 .text-column {
@@ -188,7 +188,7 @@
 }
 
 .project-footer {
-    margin-top: 2rem;
+    margin-top: 4rem;
     padding: 0 30px;
 }
 
@@ -237,7 +237,7 @@
 @media (max-width: 768px) {
     .project-footer {
         padding: 0 15px;
-        margin-top: 1.5rem;
+        margin-top: 2rem;
     }
 
     .navigation-row {
