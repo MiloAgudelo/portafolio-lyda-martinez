@@ -165,6 +165,7 @@
     line-height: 1.6;
     color: #000;
     margin: 0;
+    padding-right: 6rem;
 }
 
 .image-container {
@@ -267,6 +268,7 @@
 
     .text-container p {
         font-size: 1rem;
+        padding-right: 0 !important;
     }
 
     .image-grid {
